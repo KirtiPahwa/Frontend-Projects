@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div
+    class="container fw-bold text-white my-5"
+    style="background-color: #7532f9; border: 2px solid #441f8d"
+  >
+    <div class="row">
+            <div class="col">
+                First Name:
+            </div>
+            <div class="col" id="showfname">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Last Name:
+            </div>
+            <div class="col" id="showlname">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Date Of Birth:
+            </div>
+            <div class="col" id="showdob">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Email:
+            </div>
+            <div class="col" id="showemailId">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Mobile Number:
+            </div>
+            <div class="col" id="showMobileNumber">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Gender:
+            </div>
+            <div class="col" id="showgender">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Address:
+            </div>
+            <div class="col" id="showAddress">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                City:
+            </div>
+            <div class="col" id="showCity">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Pin Code:
+            </div>
+            <div class="col" id="showPinCode">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                State:
+            </div>
+            <div class="col" id="showState">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Country:
+            </div>
+            <div class="col" id="showCountry">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Hobbies:
+            </div>
+            <div class="col" id="showHobbies">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Qualification:
+            </div>
+            <div class="col border border-white" id="showQualification">
+                <div class="row ">
+                    <div class="col">SI.No.</div>
+                    <div class="col">Examination</div>
+                    <div class="col">Board
+                    </div>
+                    <div class="col">Percentage
+                    </div>
+                    <div class="col">Year Of Passing
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">1.</div>
+                    <div class="col">Class X</div>
+                    <div class="col" id="classXBoard">
+                    </div>
+                    <div class="col" id="classXPercentage">
+                    </div>
+                    <div class="col" id="classXPassingYear">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">2</div>
+                    <div class="col">Class XII</div>
+                    <div class="col" id="classXIIBoard">
+                    </div>
+                    <div class="col" id="classXIIPercentage">
+                    </div>
+                    <div class="col" id="classXIIPassingYear">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">3</div>
+                    <div class="col">Graduation</div>
+                    <div class="col" id="graduationBoard">
+                    </div>
+                    <div class="col" id="graduationPercentage">
+                    </div>
+                    <div class="col" id="graduationPassingYear">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">4</div>
+                    <div class="col">Masters</div>
+                    <div class="col" id="mastersBoard">
+                    </div>
+                    <div class="col" id="mastersPercentage">
+                    </div>
+                    <div class="col" id="mastersPassingYear">
+                    </div>
+                  </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Courses:
+            </div>
+            <div class="col" id="showCourses">
+            </div>
+        </div>
+        
+
+
+
+    </div>
+
+
+    <script>
+
+
+document.getElementById("showfname").innerHTML=localStorage.getItem("firstName");
+document.getElementById("showlname").innerHTML=localStorage.getItem("lastName");
+document.getElementById("showdob").innerHTML=localStorage.getItem("dob")+"-"+localStorage.getItem("month")+"-"+localStorage.getItem("year");
+document.getElementById("showemailId").innerHTML=localStorage.getItem("email");
+document.getElementById("showgender").innerHTML=localStorage.getItem("gender");
+document.getElementById("showMobileNumber").innerHTML=localStorage.getItem("mobileNumber");
+document.getElementById("showAddress").innerHTML=localStorage.getItem("address");
+document.getElementById("showCity").innerHTML=localStorage.getItem("city");
+document.getElementById("showPinCode").innerHTML=localStorage.getItem("pinCode");
+document.getElementById("showState").innerHTML=localStorage.getItem("state");
+document.getElementById("showCountry").innerHTML=localStorage.getItem("country");
+document.getElementById("showHobbies").innerHTML=localStorage.getItem("drawing")+" "+localStorage.getItem("singing")+" "+localStorage.getItem("dancing")+" "+localStorage.getItem("sketching")+" "+localStorage.getItem("othersText");
+document.getElementById("showCourses").innerHTML=localStorage.getItem("courses");
+document.getElementById("classXBoard").innerHTML=localStorage.getItem("classXBoard");
+document.getElementById("classXPercentage").innerHTML=localStorage.getItem("classXPercentage");
+document.getElementById("classXPassingYear").innerHTML=localStorage.getItem("classXPassingYear");
+document.getElementById("classXIIBoard").innerHTML=localStorage.getItem("classXIIBoard");
+document.getElementById("classXIIPercentage").innerHTML=localStorage.getItem("classXIIPercentage");
+document.getElementById("classXIIPassingYear").innerHTML=localStorage.getItem("classXIIPassingYear");
+document.getElementById("graduationBoard").innerHTML=localStorage.getItem("graduationBoard");
+document.getElementById("graduationPercentage").innerHTML=localStorage.getItem("graduationPercentage");
+document.getElementById("graduationPassingYear").innerHTML=localStorage.getItem("graduationPassingYear");
+document.getElementById("mastersBoard").innerHTML=localStorage.getItem("mastersBoard");
+document.getElementById("mastersPercentage").innerHTML=localStorage.getItem("mastersPercentage");
+document.getElementById("mastersPassingYear").innerHTML=localStorage.getItem("mastersPassingYear");
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
