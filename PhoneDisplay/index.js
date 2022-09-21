@@ -101,9 +101,12 @@ fetchProducts = (url) => {
     });
 };
 hideSearcheResults = () => {
-  var searchContainer = document.getElementsByClassName("searchContainer")[0];
-  searchContainer.classList.remove("searchedResultsVisible");
-  searchContainer.classList.add("searchingBoxHidden");
+  var searchContainer = document.getElementById("searchingContainer");
+  if (searchContainer.style.display == "none") {
+    console.log("hiddem");
+    searchContainer.classList.remove("searchedResultsVisible");
+    searchContainer.classList.add("searchingBoxHidden");
+  }
 };
 showSearchedResults = () => {
   var searchContainer = document.getElementsByClassName("searchContainer")[0];
@@ -114,15 +117,12 @@ fetchSearchedData = (value) => {
   hideSearchingBox();
   var value = value.trim();
   if (value != "") {
-    console.log("value is", value);
     document.getElementsByClassName("container")[0].style.display = "none";
     showSearchedResults();
     fetch(`https://dummyjson.com/products/search?q=${value}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         let html = "";
-
         if (data.total !== 0) {
           data.products.map((product) => {
             html += `<div class="searchedItems">
@@ -139,7 +139,8 @@ fetchSearchedData = (value) => {
         } else {
           html += `<h1>Not Found!!</h1>`;
         }
-        document.getElementById("searchContainer").innerHTML = html;
+
+        document.getElementById("searchingContainer").innerHTML = html;
       });
   }
 };
@@ -151,9 +152,13 @@ if (form.addEventListener) {
     fetchSearchedData(searchBox.value);
   });
 }
+
 document
   .getElementById("searchBtn")
-  .addEventListener("onclick", fetchSearchedData(searchBox.value));
+  .addEventListener(
+    "submit",
+    fetchSearchedData(document.getElementById("searchBox").value)
+  );
 
 window.onload = () => {
   hideSearcheResults();
