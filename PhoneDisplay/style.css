@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+:root{
+    --pink:rgb(244,28,178);
+}
+body{
+    background-color: whitesmoke;
+}
+.navbar{
+    height: auto;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    padding: 15px;
+    position: fixed;
+    box-shadow: 7px 8px 8px 0 rgba(0, 0, 0, 0.05),2px 2px 10px 0 rgba(0, 0, 0, 0.19);
+    z-index: 10;
+    justify-content: space-between;
+}
+.logo{
+    padding:5px;
+    margin: 4px 50px;
+    color:var(--pink);
+    font-weight: bolder;
+    cursor: pointer;
+    font-size: x-large;
+
+}
+.navbar ul{
+    list-style-type: none;
+    display: flex;
+    right: 0;
+    position: relative;
+}
+.navbar ul li{
+    padding:5px;
+    margin:10px 20px;
+    cursor: pointer;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+}
+.navbar ul li a:hover{
+    color:rgb(112, 106, 106)
+}
+.navbar form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar form input{
+    height: 30px;
+    width: 300px;
+    border-radius:3px;
+    border: 1px solid var(--pink);
+    outline:var(--pink) ;
+    padding-left: 10px;
+    margin-right:10px;
+}
+.navbar form button{
+    height: 33px;
+    width: 90px;
+    border-radius:3px;
+    border: none;
+    background-color: var(--pink);
+    color: white;
+    border: 1px solid var(--pink);
+}
+.navbar form button:hover{
+    background-color: white;
+    color:var(--pink);
+    cursor: pointer;
+
+}
+.cart{
+    padding: 5px;
+    margin: 10px;
+}
+#searchingBox{
+    height:300px;
+    width: 400px;
+    background-color: white; 
+    position: sticky;
+    z-index: 9;
+    margin-top: 80px;
+    margin-left:55%;
+    overflow: scroll;
+    box-shadow: 7px 8px 8px 0 rgba(0, 0, 0, 0.05),2px 2px 10px 0 rgba(0, 0, 0, 0.19);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+
+}
+#searchingBox li{
+    list-style-type: none;
+    height: 30px;
+    padding: 22px;
+    display: flex;
+    flex-shrink: 1;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    text-align: center;
+    border-bottom: 1px solid rgb(202, 189, 189);
+}
+#searchContainer{
+    height: auto;
+    width: 80%;
+    background-color: white;
+    margin: 20px 0px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.searchedItems{
+    height: auto;
+    width: 100%;
+}
+.searchedItems img{
+    height:100px;
+    width: 150px;
+    border-radius: 10px;
+}
+.imgContainer{
+    height: 100px;
+    width: 200px;
+    display: inline-block;
+}
+.info{
+    height: 100px;
+    width: 200px;
+    display: inline-block;  
+}
+.info p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.info h5{
+    color: var(--pink);
+}
+
+#searchingBox li:hover{
+    cursor: pointer;
+}
+.searchingBoxHidden{
+    display: none;
+}
+.searchingBoxVisible{
+    display: inline-block;
+}
+.searchedResultsVisible{
+    display: flex;
+}
+#searchingBoxListItem:hover{
+    /* to be set */
+    cursor: pointer;
+}
+.container{
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    height: auto;
+    width: 90%;
+    padding:20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    height: auto;
+    width: 250px;
+    margin:20px 10px 30px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition:box-shadow 0.3s;
+    background-color: white;
+}
+.card:hover{
+    box-shadow: 7px 15px 15px 0 rgba(0, 0, 0, 0.05),2px 2px 15px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.imageBox{
+    height: 200px;
+    width: 100%;
+    background-size: contain;
+}
+.imageBox img{
+    height: 200px;
+    width: 250px;
+    border-radius: 15px 15px 0px 0px;
+}
+.information{
+    height:130px;
+    width: 95%;
+    padding:10px 5px;
+    margin:0px 0px 10px;
+}
+.information h2{
+    display: inline-block;
+}
+.information p{
+font-size: 12px;
+margin: 10px 0px;
+}
+.information h4{
+    font-weight:10;
+    display: inline-block;
+    color: var(--pink);
+}
