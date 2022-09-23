@@ -13,6 +13,7 @@ hideSearchingBox = () => {
   searchingBox.classList.remove("searchingBoxVisible");
   searchingBox.classList.add("searchingBoxHidden");
 };
+
 window.onscroll = () => {
   hideSearchingBox();
 };
@@ -70,6 +71,14 @@ function listItemSelected(element) {
 var cartItems = [];
 function addToCart(cartItem) {
   console.log("click", cartItem);
+
+  //
+  if (localStorage.getItem("cartItem")) {
+    cartItems = JSON.parse(localStorage.getItem("cartItem"));
+  }
+
+  //
+
   cartItems.push(JSON.stringify(cartItem));
   localStorage.setItem("cartItem", JSON.stringify(cartItems));
 }
