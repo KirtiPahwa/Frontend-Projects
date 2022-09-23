@@ -114,6 +114,29 @@ body{
     padding: 20px 10px;
     
 }
+.removeCart{
+    margin:0px 50%;
+    height:25px;
+    width:100px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px 10px;
+    color:white;
+    background-color: var(--pink);
+    border-radius: 3px;
+    border:none;   
+     position: relative;
+    left: 0px;
+    top: 10px;
+}
+.removeCart:hover{
+    cursor: pointer;
+    background-color: white;
+    color: var(--pink);
+    border:1px solid var(--pink);
+
+}
 
 .cartInnerContainer{
     height: auto;
@@ -176,11 +199,13 @@ body{
 }
 .cartInfo{
     position: relative;
-    /* top:-20px; */
     left:20px;
     height: 100px;
     width: 200px;
     display: inline-block;  
+}
+.cartInfo h2, h5{
+    color: var(--pink);
 }
 .info p{
     margin-top: 5px;

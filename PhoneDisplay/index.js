@@ -97,6 +97,7 @@ fetchProducts = (url) => {
               </p> 
           </div>              
           <h4>${product.price} $</h4>
+
           <button class="cartBtn" type="button" onclick='addToCart(${JSON.stringify(
             product
           )})'>Add to Cart</button>
@@ -117,6 +118,9 @@ hideSearcheResults = () => {
     searchContainer.classList.add("searchingBoxHidden");
   }
 };
+function backToHomePage() {
+  // var
+}
 showSearchedResults = () => {
   var searchContainer = document.getElementsByClassName("searchContainer")[0];
   searchContainer.classList.remove("searchingBoxHidden");
