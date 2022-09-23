@@ -66,6 +66,14 @@ function listItemSelected(element) {
   searchBox.value = a;
   console.log(a);
 }
+
+var cartItems = [];
+function addToCart(cartItem) {
+  console.log("click", cartItem);
+  cartItems.push(JSON.stringify(cartItem));
+  localStorage.setItem("cartItem", JSON.stringify(cartItems));
+}
+
 fetchProducts = (url) => {
   fetch(url)
     .then((res) => res.json())
@@ -74,13 +82,12 @@ fetchProducts = (url) => {
       if (data.total !== 0) {
         data.products.map((product) => {
           html += `
-          <div class="card">
+          <div class="card" >
           <div class="imageBox">
           <img src=${product.thumbnail}>
           </div>
           <div class="information">
               <h2>${product.title}</h2>  
-
               <p>${
                 product.title.length > 30
                   ? product.description.substr(0, 120 - product.title.length) +
@@ -88,9 +95,12 @@ fetchProducts = (url) => {
                   : product.description
               }
               </p> 
-              <h4>${product.price} $</h4>
+          </div>              
+          <h4>${product.price} $</h4>
+          <button class="cartBtn" type="button" onclick='addToCart(${JSON.stringify(
+            product
+          )})'>Add to Cart</button>
 
-          </div>
       </div>
           `;
         });
@@ -103,7 +113,6 @@ fetchProducts = (url) => {
 hideSearcheResults = () => {
   var searchContainer = document.getElementById("searchingContainer");
   if (searchContainer.style.display == "none") {
-    console.log("hiddem");
     searchContainer.classList.remove("searchedResultsVisible");
     searchContainer.classList.add("searchingBoxHidden");
   }
@@ -134,6 +143,9 @@ fetchSearchedData = (value) => {
             <p>${product.description}</p>
             <h5>${product.price} $</h5>
             </div>
+            <button class="cartBtn" type="button" onclick='addToCart(${JSON.stringify(
+              product
+            )})'>Add to Cart</button>
         </div> `;
           });
         } else {
@@ -164,3 +176,4 @@ window.onload = () => {
   hideSearcheResults();
   fetchProducts("https://dummyjson.com/products/");
 };
+
